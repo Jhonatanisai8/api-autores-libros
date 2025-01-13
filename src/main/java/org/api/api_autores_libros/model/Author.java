@@ -15,7 +15,8 @@ public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Author_id;
+
     @NotNull
     private String name;
     private String nationality;

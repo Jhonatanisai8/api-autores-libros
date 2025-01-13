@@ -27,12 +27,12 @@ public class BookService {
 
     public Book saveBook(Book request) {
         Optional<Author> authorSearch = authorRepository
-                .findById(request.getAuthor().getId());
+                .findById(request.getAutor().getAuthor_id());
         if (!authorSearch.isPresent()) {
-            throw new EntityNotFoundException("Autor no encontrado con Id: " + request.getAuthor()
-                    .getId());
+            throw new EntityNotFoundException("Autor no encontrado con Id: " + request.getAutor()
+                    .getAuthor_id());
         }
-        request.setAuthor(authorSearch.get());
+        request.setAutor(authorSearch.get());
         return repository.save(request);
     }
 

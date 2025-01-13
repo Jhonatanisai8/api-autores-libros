@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
-@Table(name = "books")
+@Table(name = "book")
 @Data
 public class Book {
     // id
@@ -24,8 +24,8 @@ public class Book {
     private Integer yearPublication;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "book_id")
+    @JoinColumn(name = "author_id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Author author;
+    private Author autor;
 
 }

@@ -22,7 +22,7 @@ public class AuthorService {
     public Author geAuthorById(Long idAuthor) {
         return getAllAuthors()
                 .stream()
-                .filter(author -> author.getId().equals(idAuthor))
+                .filter(author -> author.getAuthor_id().equals(idAuthor))
                 .findFirst()
                 .map(authorBus -> {
                     return authorBus;
